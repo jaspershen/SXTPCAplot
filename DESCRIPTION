@@ -1,0 +1,9 @@
+Package: SXTpcaplot
+Type: Package
+Title: PCA analysis plot
+Version: 2.2
+Date: 2015-12-09
+Author: Jasper Shen
+Maintainer: Jasper Shen <shenxt1990@163.com>
+Description: SXTpcaplot is used to draw PCA plot
+License: What license is it under?
