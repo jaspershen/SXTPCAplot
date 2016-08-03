@@ -7,7 +7,7 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
                      cexlab=1.3,cexaxis=1.3,cexa=1.3,cextext=1
                      #parameter setting
 ) {
-  browser()
+  # browser()
   if (is.null(sample))  stop("sample is NULL")
   if (!is.null(qc)) {if (ncol(sample)!=ncol(qc)) stop("the column number of sample and qc must same")}
   if (is.null(qc)&QC) stop("QC shoud be FALSE because qc is NULL")
@@ -46,6 +46,9 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
   if (scalemethod=="pareto") {int<-apply(int,2,function(x) {(x-mean(x))/sqrt(sd(x))})}
   if (scalemethod=="no") {int<-int}
   if (scalemethod=="center") {int<-apply(int,2,function(x) {(x-mean(x))})}
+
+  int[is.na(int)] <- 0
+  int[is.infinite(int)] <- 0
 
   int.pca<-prcomp(data.frame(int),retx=TRUE,center=FALSE,scale = FALSE)
   loading<-summary(int.pca)$rotation

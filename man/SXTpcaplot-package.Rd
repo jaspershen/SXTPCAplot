@@ -42,7 +42,7 @@ scalemethod: \tab which scale method you want to use? auto, pareto and center\cr
 Package: \tab SXTpcaplot\cr
 Type: \tab Package\cr
 Version: \tab 2.2\cr
-Date: \tab 2015-08-03\cr
+Date: \tab 2016-08-03\cr
 License: \tab What license is it under?\cr
 pcaplot 2d t1 vs t2: \tab the PCA plot respect to PC1 and PC2\cr
 pcaplot 2d t1 vs t3: \tab the PCA plot respect to PC1 and PC3\cr
