@@ -149,7 +149,7 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
 
   if (ellipse)
   { require(ellipse)
-    lines(ellipse(0,scale=c(sd(x),sd(y)),centre=c(mean(x),mean(y))),lty=2)}
+    lines(ellipse::ellipse(0,scale=c(sd(x),sd(y)),centre=c(mean(x),mean(y))),lty=2)}
 
   if (QC) {
     legend("topleft",c(names(info),"QC"),
@@ -172,7 +172,7 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
   abline(v=0,lty=2)
   abline(h=0,lty=2)
   if (ellipse)
-  {  lines(ellipse(0,scale=c(sd(y),sd(z)),centre=c(mean(y),mean(z))),lty=2)}
+  {  lines(ellipse::ellipse(0,scale=c(sd(y),sd(z)),centre=c(mean(y),mean(z))),lty=2)}
 
 
   if (QC) {
@@ -194,7 +194,7 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
   abline(v=0,lty=2)
   abline(h=0,lty=2)
   if (ellipse)
-  {lines(ellipse(0,scale=c(sd(x),sd(z)),centre=c(mean(x),mean(z))),lty=2)}
+  {lines(ellipse::ellipse(0,scale=c(sd(x),sd(z)),centre=c(mean(x),mean(z))),lty=2)}
 
 
   if (QC) {
