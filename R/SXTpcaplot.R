@@ -60,19 +60,20 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
 
   pc1<-pov[1]
   pc2<-pov[2]
-  pc3<-pov[3]
+  if(ncol(sample) >=3) {pc3<-pov[3]}
 
   x<-pc[,1]
   y<-pc[,2]
-  z<-pc[,3]
+  if(ncol(sample) >=3) {z<-pc[,3]}
 
   xmin<-1.2*min(x)
   xmax<-1.2*max(x)
   ymin<-1.2*min(y)
   ymax<-1.2*max(y)
+  if(ncol(sample) >=3) {
   zmin<-1.2*min(z)
   zmax<-1.2*max(z)
-
+}
   label<-list()
   for (i in 1:length(info)) {
     label[[i]]<-match(as.character(info[[i]]),name)
@@ -111,6 +112,7 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
   abline(h=0,lty=2)
   dev.off()
 
+  if(ncol(sample) >=3) {
   pdf("loading plot 2 vs 3.pdf",width=width,height=height)
   plot(loading[,2],loading[,3],pch=20,xlab="Component 2",ylab="Component 3",
        cex.lab=cexlab,cex.axis=cexaxis)
@@ -132,7 +134,7 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
                 zlab="Component 3",angle=40,
                 pch=20,box=FALSE,cex.symbol=1,cex.lab=1.3,cex.axis=0.8)
   dev.off()
-
+}
 
   #PCA 2D
   pdf("pcaplot 2d pc1 vs pc2.pdf",width=width,height=height)
@@ -161,6 +163,8 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
   }
   dev.off()
 
+
+  if(ncol(sample) >=3) {
   #t2 vs t3 plot
   pdf("pcaplot 2d pc2 vs pc3.pdf",width=width,height=height)
   par(mar=c(5,5,4,2))
@@ -223,6 +227,8 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
            pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",cex=1.5)
   }
   dev.off()
+  }
+
   sample.pca<-int.pca
   save(sample.pca,file="sample.pca")
   cat("PCA plot is done\n")
