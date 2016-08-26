@@ -136,6 +136,8 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
   dev.off()
 }
 
+  browser()
+
   #PCA 2D
   pdf("pcaplot 2d pc1 vs pc2.pdf",width=width,height=height)
   #t1 vs t2 plot
