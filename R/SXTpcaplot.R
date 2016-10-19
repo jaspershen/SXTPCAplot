@@ -1,10 +1,22 @@
-SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
+SXTpcaplot<-function(sample=NULL,
+                     qc=NULL,
+                     info=NULL,
+                     tags=NULL,
                      #used data
-                     width=7,height=7,QC=FALSE,text=FALSE,ellipse=FALSE,scalemethod="auto",
+                     width=7,
+                     height=7,
+                     QC=FALSE,
+                     text=FALSE,
+                     ellipse=FALSE,
+                     scalemethod="auto",
                      color=c("green","red","blue","yellow","black","cyan","gray48",
                              "chocolate4","darkmagenta","indianred1"),
                      shape=c(17,19,15,18,2,8,11,13,12,14),
-                     cexlab=1.3,cexaxis=1.3,cexa=1.3,cextext=1
+                     cexlab=1.8,
+                     cexaxis=1.5,
+                     cexa=1.3,
+                     cextext=1,
+                     cexlegend = 1.5
                      #parameter setting
 ) {
   # browser()
@@ -157,11 +169,13 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
 
   if (QC) {
     legend("topleft",c(names(info),"QC"),
-           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",cex=1.1)
+           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
   else{
     legend("topleft",names(info),
-           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",cex=1.1)
+           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",cex = cexlegend,
+           pt.cex = cexa)
   }
   dev.off()
 
@@ -183,11 +197,13 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
 
   if (QC) {
     legend("topleft",c(names(info),"QC"),
-           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",cex=1.1)
+           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
   else{
     legend("topleft",names(info),
-           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",cex=1.1)
+           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
   dev.off()
   #t1 vs t3 plot
@@ -205,11 +221,13 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
 
   if (QC) {
     legend("topleft",c(names(info),"QC"),
-           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",cex=1.1)
+           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
   else{
     legend("topleft",names(info),
-           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",cex=1.1)
+           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
 
   dev.off()
@@ -222,11 +240,13 @@ SXTpcaplot<-function(sample=NULL,qc=NULL,info=NULL,tags=NULL,
 
   if (QC) {
     legend("topleft",c(names(info),"QC"),
-           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",cex=1.5)
+           pch=pchalist[1:(length(info)+1)],col=colourlist[1:(length(info)+1)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
   else{
     legend("topleft",names(info),
-           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",cex=1.5)
+           pch=pchalist[1:length(info)],col=colourlist[1:length(info)],bty="n",
+           cex=cexlegend, pt.cex = cexa)
   }
   dev.off()
   }
