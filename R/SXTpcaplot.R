@@ -118,6 +118,7 @@ SXTpcaplot<-function(sample=NULL,
 
   #laoding plot
   pdf("loading plot 1 vs 2.pdf",width=width,height=height)
+  par(mar = c(5,5,4,2))
   plot(loading[,1],loading[,2],pch=20,xlab="Component 1",ylab="Component 2",
        cex.lab=cexlab,cex.axis=cexaxis)
   abline(v=0,lty=2)
@@ -126,6 +127,7 @@ SXTpcaplot<-function(sample=NULL,
 
   if(ncol(sample) >=3) {
   pdf("loading plot 2 vs 3.pdf",width=width,height=height)
+    par(mar = c(5,5,4,2))
   plot(loading[,2],loading[,3],pch=20,xlab="Component 2",ylab="Component 3",
        cex.lab=cexlab,cex.axis=cexaxis)
   abline(v=0,lty=2)
@@ -133,6 +135,7 @@ SXTpcaplot<-function(sample=NULL,
   dev.off()
 
   pdf("loading plot 1 vs 3.pdf",width=width,height=height)
+  par(mar = c(5,5,4,2))
   plot(loading[,1],loading[,3],pch=20,xlab="Component 1",ylab="Component 3",
        cex.lab=cexlab,cex.axis=cexaxis)
   abline(v=0,lty=2)
@@ -142,6 +145,7 @@ SXTpcaplot<-function(sample=NULL,
   #loading plot 3d
   require(scatterplot3d)
   pdf("loading plot 3d.pdf",width=width,height=height)
+  par(mar = c(5,5,4,2))
   scatterplot3d(loading[,1],loading[,2],loading[,3],xlab="Component 1",ylab="Component 2",
                 zlab="Component 3",angle=40,
                 pch=20,box=FALSE,cex.symbol=1,cex.lab=1.3,cex.axis=0.8)
@@ -208,6 +212,7 @@ SXTpcaplot<-function(sample=NULL,
   dev.off()
   #t1 vs t3 plot
   pdf("pcaplot 2d pc1 vs pc3.pdf",width=width,height=height)
+  par(mar = c(5,5,4,2))
   plot(x,z,xlim=c(xmin,xmax),ylim=c(zmin,zmax),col=colour,pch=pcha,
        xlab=paste("PC1:",pc1,sep=""),ylab=paste("PC3:",pc3,sep=""),
        cex=1.3,cex.axis=1.3,cex.lab=1.3)
