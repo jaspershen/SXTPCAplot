@@ -152,7 +152,7 @@ SXTpcaplot<-function(sample=NULL,
   dev.off()
 }
 
-  browser()
+  # browser()
 
   #PCA 2D
   pdf("pcaplot 2d pc1 vs pc2.pdf",width=width,height=height)
@@ -239,6 +239,7 @@ SXTpcaplot<-function(sample=NULL,
   #PLS 3D
   require(scatterplot3d)
   pdf("pcaplot 3d.pdf",width=width,height=height)
+  par(mar = c(5,5,3,2))
   scatterplot3d(x,y,z,color=colour,xlab=paste("PC1:",pc1,sep=""),ylab=paste("PC2:",pc2,sep=""),zlab=paste("PC3:",pc3,sep=""),angle=40,
                 pch=pcha,box=FALSE,cex.symbol=1,cex.lab=1.3,cex.axis=1.3,
                 xlim=c(xmin,xmax),ylim=c(ymin,ymax),zlim=c(zmin,zmax))
